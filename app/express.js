@@ -12,8 +12,8 @@ import '../helpers/utils'
 const app = express()
 
 app.use(sassMiddleware({
-  src: '/app/styles',
-  dest: '/app/public',
+  src: 'styles',
+  dest: 'public',
   force: true,
   // debug: true,
   // outputStyle: 'compressed',
@@ -32,8 +32,8 @@ app.use(express.urlencoded({
   extended: false
 }));
 
-app.listen(process.env.PORT, () => {
-  console.log(`The commits.to app is running on port ${process.env.PORT}`)
+app.listen(3001, () => {
+  console.log(`The commits.to app is running on port 3001`)
 })
 
 export default app

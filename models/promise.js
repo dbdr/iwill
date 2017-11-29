@@ -5,8 +5,8 @@ import moment from 'moment-timezone'
 import parseCredit from '../lib/parse/credit'
 
 // set up a new database using database credentials set in .env
-export const sequelize = new Sequelize('database', process.env.DB_USER, 
-                                                   process.env.DB_PASS, {
+export const sequelize = new Sequelize('database', null,
+                                                   null, {
   logging: false,
   host: '0.0.0.0',
   dialect: 'sqlite',
@@ -17,7 +17,7 @@ export const sequelize = new Sequelize('database', process.env.DB_USER,
   },
   // Security note: db is saved to `.data/database.sqlite` in local filesystem.
   // Nothing in `.data` directory gets copied if someone remixes the project.
-  storage: '.data/database.sqlite'
+  storage: 'data/database.sqlite'
 })
 
 // new argument against "domain": "commits.to" and "promises.to" might
